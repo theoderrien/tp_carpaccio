@@ -1,5 +1,6 @@
 import java.text.DecimalFormat;
 import java.util.Map;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
@@ -8,11 +9,13 @@ public class App {
         df.setMaximumFractionDigits(2);
         df.setMinimumFractionDigits(2);
 
+        Scanner input = new Scanner(System.in);
+
         // Get Map of country code and associated tax rate
         Map<String, Double> taxRateByCountry = Tax.getTaxRateMap();
 
 
-
+        // Display tax rate Map -------
         String taxRateAlignFormat = "| %-7s | %7s |%n";
 
         System.out.println("\nTableau des taxes par pays\n");
@@ -24,5 +27,18 @@ public class App {
         }
         System.out.format("└─────────┴─────────┘%n");
         System.out.println("\n");
+
+
+        System.out.print("Entrer total HT : ");
+        double totalHT = input.nextDouble();
+
+        System.out.print("Entrer montant TVA : ");
+        double tva = input.nextDouble();
+
+        double totalTTC = totalHT + tva;
+        System.out.println("total TTC = " + totalTTC + "€");
+
+
+
     }
 }
