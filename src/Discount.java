@@ -16,4 +16,14 @@ public class Discount {
         return discountMap;
     }
 
+    public static String getDiscountInfo(double totalHT){
+        String response = "Taux de réduction suggéré : ";
+        if(totalHT > 1000){
+            response += "3%";
+        }else{
+            response += "0%";
+        }
+        return response;
+    }
+
 }

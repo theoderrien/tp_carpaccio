@@ -67,6 +67,12 @@ public class App {
             }
         }
 
+        // Discount suggestion depending on totalHT
+
+        String suggestedDiscount = Discount.getDiscountInfo(totalHT);
+        System.out.println("Total HT : " + totalHT +", " + suggestedDiscount);
+
+
         // Discount input -------
 
         System.out.print("Entrer montant réduction : ");
