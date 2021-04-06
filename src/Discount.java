@@ -24,8 +24,10 @@ public class Discount {
             response += "5%";
         }else if(totalHT > 7000 & totalHT <= 10000){
             response += "7%";
-        }else if(totalHT > 10000){
+        }else if(totalHT > 10000 & totalHT <= 50000){
             response += "10%";
+        }else if(totalHT > 50000){
+            response += "15%";
         }else{
             response += "0%";
         }
