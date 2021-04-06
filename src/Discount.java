@@ -20,8 +20,10 @@ public class Discount {
         String response = "Taux de réduction suggéré : ";
         if(totalHT > 1000 & totalHT <= 5000){
             response += "3%";
-        }else if(totalHT > 5000){
+        }else if(totalHT > 5000 & totalHT <= 7000){
             response += "5%";
+        }else if(totalHT > 7000){
+            response += "7%";
         }else{
             response += "0%";
         }
