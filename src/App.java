@@ -75,9 +75,9 @@ public class App {
 
         // Discount input -------
 
-        System.out.print("Entrer montant réduction : ");
-        double discount = input.nextDouble();
-        totalHT -= discount;
+        System.out.print("Entrer taux de réduction : ");
+        double discount = (input.nextDouble() / 100) + 1;
+        totalHT *= discount;
 
         // Country code input -------
 
