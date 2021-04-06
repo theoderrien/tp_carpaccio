@@ -51,6 +51,10 @@ public class App {
         boolean newLine = true;
         double totalHT = 0;
         while (newLine) {
+
+            System.out.print("Entrer libellé : ");
+            String libelle = input.next();
+
             System.out.print("Entrer quantite : ");
             int quantite = input.nextInt();
 
