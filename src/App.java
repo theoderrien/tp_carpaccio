@@ -67,8 +67,19 @@ public class App {
             }
         }
 
+        // Discount input -------
+
+        System.out.print("Entrer montant réduction : ");
+        double discount = input.nextDouble();
+        totalHT -= discount;
+
+        // Country code input -------
+
         System.out.print("Entrer code pays : ");
         String codePays = input.next();
+
+
+        // Get country tax rate and apply to total -------
 
         if (taxRateByCountry.containsKey(codePays)) {
             double tauxTva = taxRateByCountry.get(codePays);
