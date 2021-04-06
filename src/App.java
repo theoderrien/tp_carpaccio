@@ -29,8 +29,12 @@ public class App {
         System.out.println("\n");
 
 
-        System.out.print("Entrer total HT : ");
-        double totalHT = input.nextDouble();
+        System.out.print("Entrer quantite : ");
+        int quantite = input.nextInt();
+        System.out.print("Entrer prix unitaire : ");
+        double prixUnitaire = input.nextDouble();
+
+        double totalHT = quantite * prixUnitaire;
 
         System.out.print("Entrer code pays : ");
         String codePays = input.next();
