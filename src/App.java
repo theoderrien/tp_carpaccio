@@ -13,6 +13,8 @@ public class App {
 
         // Get Map of country code and associated tax rate
         Map<String, Double> taxRateByCountry = Tax.getTaxRateMap();
+        // Get Map of price step and associated discount
+        Map<Integer, Double> discountMap = Discount.getDiscountMap();
 
 
         // Display tax rate Map -------
@@ -27,6 +29,24 @@ public class App {
         }
         System.out.format("└─────────┴─────────┘%n");
         System.out.println("\n");
+
+
+        // Display discount Map -------
+
+        String discountAlignFormat = "| %-7s | %15s |%n";
+
+        System.out.println("\nTableau des réductions par palier\n");
+        System.out.format("┌─────────┬─────────────────┐%n");
+        System.out.format("|Palier   |Taux de réduction|%n");
+        System.out.format("├─────────┼─────────────────┤%n");
+        for (Map.Entry<Integer,Double> discount: discountMap.entrySet()){
+            System.out.printf(discountAlignFormat, "> " + discount.getKey(), df.format(discount.getValue() * 100) + "%");
+        }
+        System.out.format("└─────────┴─────────────────┘%n");
+        System.out.println("\n");
+
+
+        // Quantity and unit price input -------
 
         boolean newLine = true;
         double totalHT = 0;
