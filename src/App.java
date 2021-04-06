@@ -28,13 +28,24 @@ public class App {
         System.out.format("└─────────┴─────────┘%n");
         System.out.println("\n");
 
+        boolean newLine = true;
+        double totalHT = 0;
+        while (newLine) {
+            System.out.print("Entrer quantite : ");
+            int quantite = input.nextInt();
 
-        System.out.print("Entrer quantite : ");
-        int quantite = input.nextInt();
-        System.out.print("Entrer prix unitaire : ");
-        double prixUnitaire = input.nextDouble();
+            System.out.print("Entrer prix unitaire : ");
+            double prixUnitaire = input.nextDouble();
+            totalHT += (quantite * prixUnitaire);
 
-        double totalHT = quantite * prixUnitaire;
+            System.out.print("Nouvelle ligne ? (o/n) :  ");
+            String newLineInput = input.next();
+            if (newLineInput.equals("o")){
+                newLine = true;
+            } else {
+                newLine = false;
+            }
+        }
 
         System.out.print("Entrer code pays : ");
         String codePays = input.next();
