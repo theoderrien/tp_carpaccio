@@ -16,22 +16,24 @@ public class Discount {
         return discountMap;
     }
 
-    public static String getDiscountInfo(double totalHT){
-        String response = "Taux de réduction suggéré : ";
+    public static double getDiscountInfo(double totalHT){
+
+        double totalWithDiscount;
+
         if(totalHT > 1000 & totalHT <= 5000){
-            response += "3%";
+            totalWithDiscount = totalHT - (totalHT * 0.03);
         }else if(totalHT > 5000 & totalHT <= 7000){
-            response += "5%";
+            totalWithDiscount = totalHT - (totalHT * 0.05);
         }else if(totalHT > 7000 & totalHT <= 10000){
-            response += "7%";
+            totalWithDiscount = totalHT - (totalHT * 0.07);
         }else if(totalHT > 10000 & totalHT <= 50000){
-            response += "10%";
+            totalWithDiscount = totalHT - (totalHT * 0.10);
         }else if(totalHT > 50000){
-            response += "15%";
+            totalWithDiscount = totalHT - (totalHT * 0.15);
         }else{
-            response += "0%";
+            totalWithDiscount = totalHT;
         }
-        return response;
+        return totalWithDiscount;
     }
 
 }

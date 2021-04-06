@@ -67,17 +67,10 @@ public class App {
             }
         }
 
-        // Discount suggestion depending on totalHT
-
-        String suggestedDiscount = Discount.getDiscountInfo(totalHT);
-        System.out.println("Total HT : " + totalHT +", " + suggestedDiscount);
-
-
-        // Discount input -------
-
-        System.out.print("Entrer taux de réduction : ");
-        double discount = (input.nextDouble() / 100);
-        totalHT = totalHT - (totalHT * discount);
+        // Apply discount -------
+        System.out.println("Total before " + totalHT);
+        totalHT = Discount.getDiscountInfo(totalHT);
+        System.out.println("Total after " + totalHT);
 
         // Country code input -------
 
