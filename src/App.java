@@ -68,9 +68,9 @@ public class App {
         }
 
         // Apply discount -------
-        System.out.println("Total before " + totalHT);
+
         totalHT = Discount.getDiscountInfo(totalHT);
-        System.out.println("Total after " + totalHT);
+
 
         // Country code input -------
 
