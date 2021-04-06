@@ -32,12 +32,17 @@ public class App {
         System.out.print("Entrer total HT : ");
         double totalHT = input.nextDouble();
 
-        System.out.print("Entrer taux TVA : ");
-        double tauxTva = (input.nextDouble()/100) + 1;
+        System.out.print("Entrer code pays : ");
+        String codePays = input.next();
 
-        double totalTTC = totalHT * tauxTva;
-        System.out.println("total TTC = " + totalTTC + "€");
+        if (taxRateByCountry.containsKey(codePays)) {
+            double tauxTva = taxRateByCountry.get(codePays);
 
+            double totalTTC = totalHT * tauxTva;
+            System.out.println("total TTC = " + totalTTC + "€");
+        }else{
+            System.out.println("Code pays incorrect");
+        }
 
 
     }
