@@ -32,10 +32,10 @@ public class App {
         System.out.print("Entrer total HT : ");
         double totalHT = input.nextDouble();
 
-        System.out.print("Entrer montant TVA : ");
-        double tva = input.nextDouble();
+        System.out.print("Entrer taux TVA : ");
+        double tauxTva = (input.nextDouble()/100) + 1;
 
-        double totalTTC = totalHT + tva;
+        double totalTTC = totalHT * tauxTva;
         System.out.println("total TTC = " + totalTTC + "€");
 
 
